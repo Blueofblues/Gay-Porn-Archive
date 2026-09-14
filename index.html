@@ -37,6 +37,7 @@
     }
     #linkbox {
         margin-top: 20px;
+        display: none;
     }
     a {
         color: #4CAF50;
@@ -51,16 +52,32 @@
     <p>Enter your access password:</p>
 
     <p style="font-size:14px; opacity:0.7;">
-        (Password hint: ACCESS2024)
+        (Password hint: my favorite color)
     </p>
 
-    <p style="margin-top:20px;">
-        <strong>Archive Link:</strong><br>
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="checkPass()">Unlock</button>
+
+    <div id="linkbox">
+        <p><strong>Archive Link:</strong></p>
         <a href="https://mega.nz/folder/7w8zkDJB#BGJr_L6g8BzsoqBdI8uNCQ" target="_blank">
             Open Archive
         </a>
-    </p>
+    </div>
 </div>
+
+<script>
+function checkPass() {
+    const correct = "Blue";
+    const entered = document.getElementById("pass").value;
+
+    if (entered === correct) {
+        document.getElementById("linkbox").style.display = "block";
+    } else {
+        alert("Incorrect password.");
+    }
+}
+</script>
 
 </body>
 </html>
